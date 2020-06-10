@@ -16,6 +16,12 @@ app.use(bodyParser());
 const router = new Router();
 
 router
+  .get('/ss-log', async (ctx, next) => {
+    const result = await http.get('/_temp/ss_log.txt', )
+    ctx.body = {
+      log: result.data
+    };
+  })
   .get('/ss-config', async (ctx, next) => {
     const result = await http.get('/_api/ss');
     ctx.body = result.data.result[0]
