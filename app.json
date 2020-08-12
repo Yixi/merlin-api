@@ -1,0 +1,4 @@
+{
+  "name": "merlin-api",
+  "script": "./src/index.js"
+}
