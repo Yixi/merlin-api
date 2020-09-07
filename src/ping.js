@@ -3,7 +3,7 @@ const exec = require('child_process').exec;
 const httping = (url) => new Promise((resolve, reject) => {
   exec(
     `httping -c 3 ${url} | grep round-trip | awk -F'=' '{print $2}' | awk -F'/' '{print $2}'`,
-    {timeout: 5 * 1000},
+    {timeout: 10 * 1000},
     (err, stdout, stderr) => {
       if (err) {
         resolve("0");
